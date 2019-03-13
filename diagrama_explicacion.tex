@@ -50,7 +50,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		%\includegraphics[width=1 \textwidth]{practica03.jpeg}
+		\includegraphics[width=1 \textwidth]{practica03.jpeg}
 		\caption{Diagrama E-R para "\,El rey de los Abarrotes ".}
 	\end{figure}
 	
@@ -182,9 +182,26 @@
 		
             Volvimos a repasar la idea general detrás de nuestro diseño y cómo se relacionaba
             con el caso de uso. Cambiamos la entidad 'tipo de pago' para que se relacioonara
-            con el sistema de puntos y aclaramos la exitencia de relaciones como 'Tener
-            inventario'
+            con el sistema de puntos y aclaramos la exitencia de las relaciones entre
+            Empleado, Sucursales y Departamento. Decidimos los nombres finales para todas
+            las relaciones definidas hasta el momento y sus cardinalidades.
+            
 		\item [11/03] La idea esta completa!
+            
+            Nos reunimos para finalizar con el diseño dando un último chequeo a las relaciones.
+            Terminamos el modelado de los productos. Modificamos la entidad para inclur un
+            lote y decidimos que cada ejemplar de Producto es una unidad del mismo.
+            Es decir, si tenemos 7 botellas de agua, 3 Ciel y 4 Bonafont, hay 7 productos en la
+            base de datos. Quedaron sus nombres finales, participaciones y cardinalidades.
+        
+		\item [12/03] Rellenar Entidades
+            
+            Empezamos y terminamos a agregar todos los atributos mencionados en el caso
+            de uso al diagrama. Después de agregar todos, marcamos las llaves y agregamos
+            Id's a algunas para mantener el diseño que teníamos planeado y que fueran fuertes
+            Por jemplo, tenemos un ID de producto que representa un 'código de barras' y la
+            llave del producto es compuesta por eso y su lote.
+		
 	\end{labeling}
 	
 	

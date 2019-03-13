@@ -156,12 +156,31 @@
 	\section{Bitácora}
 	
 	\begin{labeling}{alligator}
-		\item [04/03] Inicio de proyecto Categorizamos entidades (a-atributadas)
-		 y relaciones sin detalles ($\#$, part, ...). PENDIENTES: definir como 
-		 representar herencia sin herencia, todo lo que falto en el modelo 
-		 (detalles).
-		\item [05/03] E-R Ext es válido, adecuamos ejemplos en el laboratorio. 
-		\item [07/03] Definir relaciones finales, terminar diseño 'tipo de pago'.
+		\item [04/03] Inicio de proyecto.
+            
+            Durante esta reunión empezamos a traducir el caso de uso a un diseño para
+            nuestro Diagrama, principalmente decidimos qué cosas iban a ser entidades y
+            dejamos mas o menos expresadas las relaciones que consideramos necesarias
+            entre ellas. Durante esta reunión tambié discutimos sobre cómo representar la
+            herencia sin usar ER extendido pero no llegamos a nada. Asimismo, no escribimos
+            los atributos ni marcamos los detalles (cardinalidad, participación, llaves...) del
+            diagrama.
+            
+		\item [05/03] Sesión de laboratorio
+		
+            Gracias a la noticia de que la herencia estaba permitida, la situación de la primera 
+            sesión se resolvió (dejamos sucursales, tipos de empleado) usando la herencia,
+            Asimismo en base a los ejemplos del laboratorio agregamos toda la parte de las
+            ventas y los métodos de pago como dos entidades. Originalmente sólo
+            contemplamos una entidad venta con atributos pero los ejemplos nos convencieron
+            de que era una mejor idea crear la entidad especializada. 
+    
+		\item [07/03] Reunión de 1hora con todo el equipo.
+		
+            Volvimos a repasar la idea general detrás de nuestro diseño y cómo se relacionaba
+            con el caso de uso. Cambiamos la entidad 'tipo de pago' para que se relacioonara
+            con el sistema de puntos y aclaramos la exitencia de relaciones como 'Tener
+            inventario'
 		\item [11/03] La idea esta completa!
 	\end{labeling}
 	

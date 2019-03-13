@@ -48,66 +48,66 @@
 	
 	El siguiente diagrama esta basado de acuerdo a las especificaciones en el caso de uso.
 	
-		\begin{figure}[H]
+	\begin{figure}[H]
 		\centering
 		\includegraphics[width=1 \textwidth]{practica03.jpeg}
 		\caption{Diagrama E-R para "\,El rey de los Abarrotes ".}
 	\end{figure}
-
-
-\section{Desarrollo}
-Se decidió modelar el caso de uso de la siguiente manera.
-\subsection{Entidades}
-\begin{itemize}
-	\item Fuertes
-	\begin{description}[leftmargin=8em,style=nextline]
-		\item [Sucursal]
-		\item [Persona]
-		\item [Empleado:] Es una entidad porque es necesario tener la información sobre las personas que trabajan en alguna sucursal.
-		\item [Gerente]
-		\item [Encargado]
-		\item [Cliente]
-		\item [Venta]
-		\item [Ticket]
-		\item [Producto]
-		\item [Tipo de pago:] Esta entidad indica el tipo de pago que realiza un cliente, 
-		\item [Farmacia]
-		\item [Medicamentos]
-		\item [Abarrotes] 
-		\item [Vinos y Licores]
+	
+	
+	\section{Desarrollo}
+	Se decidió modelar el caso de uso de la siguiente manera.
+	\subsection{Entidades}
+	\begin{itemize}
+		\item Fuertes
+		\begin{description}[leftmargin=8em,style=nextline]
+			\item [Sucursal] Esta entidad es necesaria porque que las demás entidades tengan sentido. Tiene como atributos \textit{Número de sucursal, Nombre de sucursal, Dirección}
+			\item [Persona] Se decidio poner una entidad persona porque un empleado también puede ser cliente de la tienda y tener asociada una tarjeta. Tiene como atributos \textit{Nombre, Dirección, Telefono,}
+			\item [Empleado:] Es una entidad que se deriva de persona y corresponde a las personas que trabajan en alguna sucursal.
+			\item [Gerente] 
+			\item [Encargado]
+			\item [Cliente] Esta entidad se deriva de persona.
+			\item [Venta]
+			\item [Ticket] Esta entidad es necesaria porque contiene la información sobre la venta que se realizo, el tipo de artículos que el cliente adquirió, el empleado que efectuo la venta, el numero de sucursal donde se hizo la compra, la forma de pago.
+			\item [Producto]
+			\item [Tipo de pago:] Esta entidad indica el tipo de pago que realiza un cliente, 
+			\item [Farmacia]
+			\item [Medicamentos]
+			\item [Abarrotes] 
+			\item [Vinos y Licores]
+			
+		\end{description}
+		\item Débiles
+		\begin{description}[leftmargin=8em,style=nextline]
+			\item [Tarjeta:] Corresponde a la tarjeta digital de puntos y es una entidad débil porque debe estar asociado al id del cliente.
+			\item [Departamento]
+		\end{description}
+	\end{itemize}
+	
+	\subsection{Relaciones}
+	\begin{itemize}
+		\item
 		
-	\end{description}
-	\item Débiles
-	\begin{description}[leftmargin=8em,style=nextline]
-		\item [Tarjeta:] Corresponde a la tarjeta digital de puntos y es una entidad débil porque debe estar asociado al id del cliente.
-		\item [Departamento]
-	\end{description}
-\end{itemize}
-
-\subsection{Relaciones}
-\begin{itemize}
-	\item
+		\begin{description}[leftmargin=9em,style=nextline]
+			\item[Trabajar] Esta relación esta asociada con la entidad empleado y departamento, ya que la entidad departamento contiene la información de la sucursal podemos saber en que sucursal trabaja esa persona.
+			\item[Supervisar]  
+			\item[Dirigir]
+			\item[Pagar] Esta relación se asocia con la entidad tipo de pago y venta, ya que el cliente puede pagar de diferentes formas, en efectivo, tarjeta de credito o debito o con su tarjeta digital de puntos.
+			\item[Abonar puntos] Esta relación esta asociada con la entidad venta y tarjeta, ya que al efectuarse una compra y si el cliente presenta su tarjeta se le abonan los puntos correspondientes.
+			\item[Expedir] Esta relación esta asociada con la entidad venta y ticket porque en cada venta que se haga se deberá generar un ticket, además de que tiene el atributo  \textit{fecha de expedición} porque será importante para que el cliente pueda abonar los puntos generados si al momento de efectuar su compra no presenta su tarjeta lo podrá hacer después con su ticket.  
+			\item[Canjear ticket] Esta relación esta asociada con la entidad cliente y ticket, tiene como atributo \textit{fecha de canjeo}, esta operación tiene una fecha limite y si no cumple con lo establecido no se le podrá abonar los puntos al cliente.
+			\item[Consumir saldo]
+			\item[Tener inventario]
+			\item[Consumir inventario]
+			\item[Asociar] Es una relación débil que esta relacionada con la entidad cliente y tarjeta.
+			\item[Poseer] 
+		\end{description}
+	\end{itemize}
 	
-	\begin{description}[leftmargin=8em,style=nextline]
-		\item[Trabajar]
-		\item[Supervisar]  
-		\item[Dirigir]
-		\item[Pagar]
-		\item[Abonar puntos]
-		\item[Expedir]
-		\item[Canjear ticket]
-		\item[Consumir saldo]
-		\item[Tener inventario]
-		\item[Consumir inventario]
-		\item[Asociar]
-		\item[Poseer] 
-	\end{description}
-\end{itemize}
 	
-
-
-
-\section{Bitácora}
+	
+	
+	\section{Bitácora}
 	
 	\begin{labeling}{alligator}
 		\item [04/03] Inicio de proyecto Categorizamos entidades (a-atributadas) y relaciones sin detalles ($\#$, part, ...). PENDIENTES: definir como representar herencia sin herencia, todo lo que falto en el modelo (detalles).

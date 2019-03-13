@@ -74,7 +74,9 @@
 			\item [Encargado] Es un empleado que supervisa un departamento. 
 			Se usa para llevar la cuenta de quien supervisa que lugares.
 			\item [Cliente] Esta entidad se deriva de persona. Se usa para 
-			llevar registro de los datos de los clientes.
+			llevar registro de los datos de los clientes. Notemos que como el 
+			saldo es independiente de la tarjeta (pues esta se puede perder) el 
+			saldo se guarga en los atributos del cliente.
 			\item [Venta] En una entidad asociativa que representa la venta de 
 			un producto, yq que esta requiere de mucha información de varias 
 			entidades.
@@ -132,12 +134,13 @@
 			será importante para que el cliente pueda abonar los puntos 
 			generados si al momento de efectuar su compra no presenta su tarjeta
 			lo podrá hacer después con su ticket.
+			\item[Atender] Relación que indica que empleado atendió que venta.
 			\item[Canjear ticket] Esta relación esta asociada con la entidad 
 			cliente y ticket, tiene como atributo \textit{fecha de canjeo}, 
 			esta operación tiene una fecha limite y si no cumple con lo 
 			establecido no se le podrá abonar los puntos al cliente.
-			\item[Consumir saldo] Es una relación entre la tarjeta y el cliente.
-			Es así pues sólo se debe consumir saldo cuando el cliente elija 
+			\item[Consumir saldo] Es una relación entre la tarjeta y el tipo de
+			pago. Es así pues sólo se debe consumir saldo cuando el cliente elija 
 			usar los puntos como medio de pago.
 			\item[Tener inventario] Indica que un ejemplar de un producto está 
 			en el inventario de un departamento. 

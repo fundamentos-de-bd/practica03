@@ -12,6 +12,8 @@
 \marginsize{2cm}{2cm}{2.0cm}{2cm}
 \usepackage{enumitem}
 \usepackage{setspace}
+\usepackage{scrextend}
+\addtokomafont{labelinglabel}{\sffamily}
 
 %% Graphics
 \usepackage{graphicx}
@@ -20,8 +22,7 @@
 \usepackage{multirow}
 \usepackage{caption}
 \usepackage{float}
-\usepackage{scrextend}
-\addtokomafont{labelinglabel}{\sffamily}
+
 
 \hypersetup{
 	colorlinks=true,
@@ -50,39 +51,60 @@
 		\begin{figure}[H]
 		\centering
 		\includegraphics[width=1 \textwidth]{practica03.jpeg}
-		\caption{Diagrama E-R.}
+		\caption{Diagrama E-R para "\,El rey de los Abarrotes ".}
 	\end{figure}
 
 
 \section{Desarrollo}
-
+Se decidió modelar el caso de uso de la siguiente manera.
 \subsection{Entidades}
 \begin{itemize}
 	\item Fuertes
-	\begin{itemize}
-		\item Sucursal
-		\item Persona
-		\item Empleado
-		\item Gerente
-		\item Encargado
-		\item Cliente
-		\item Venta
-		\item Ticket
-		\item Producto
-		\item Tipo de pago
-		\item Farmacia
-		\item Medicamentos
-		\item Abarrotes 
-		\item Vinos y Licores
+	\begin{description}[leftmargin=8em,style=nextline]
+		\item [Sucursal]
+		\item [Persona]
+		\item [Empleado:] Es una entidad porque es necesario tener la información sobre las personas que trabajan en alguna sucursal.
+		\item [Gerente]
+		\item [Encargado]
+		\item [Cliente]
+		\item [Venta]
+		\item [Ticket]
+		\item [Producto]
+		\item [Tipo de pago:] Esta entidad indica el tipo de pago que realiza un cliente, 
+		\item [Farmacia]
+		\item [Medicamentos]
+		\item [Abarrotes] 
+		\item [Vinos y Licores]
 		
-	\end{itemize}
+	\end{description}
 	\item Débiles
-	\begin{itemize}
-		\item Tarjeta
-		\item Departamento
-	\end{itemize}
-	
+	\begin{description}[leftmargin=8em,style=nextline]
+		\item [Tarjeta:] Corresponde a la tarjeta digital de puntos y es una entidad débil porque debe estar asociado al id del cliente.
+		\item [Departamento]
+	\end{description}
 \end{itemize}
+
+\subsection{Relaciones}
+\begin{itemize}
+	\item
+	
+	\begin{description}[leftmargin=8em,style=nextline]
+		\item[Trabajar]
+		\item[Supervisar]  
+		\item[Dirigir]
+		\item[Pagar]
+		\item[Abonar puntos]
+		\item[Expedir]
+		\item[Canjear ticket]
+		\item[Consumir saldo]
+		\item[Tener inventario]
+		\item[Consumir inventario]
+		\item[Asociar]
+		\item[Poseer] 
+	\end{description}
+\end{itemize}
+	
+
 
 
 \section{Bitácora}
